@@ -29,8 +29,9 @@ body {
   color: var(--color-primario);
   text-align: center;
   font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6; 
   margin: 0;
-  
 }
 
 /* HEADER */
@@ -38,4 +39,22 @@ body {
 header {
   background-color: var(--color-primario);
   color: var(--fondo);
+  position: sticky;
+  top: 0;
+  z-index: 100; 
+}
+
+header a {
+  text-decoration: none;
+  color: var(--fondo);
+}
+
+article a {
+  color: var(--color-secundario);
+  text-decoration: none;
+  transition: color var(--transicion);
+}
+
+article a:hover {
+  color: var(--color-secundario-hover);
 }
