@@ -42,12 +42,16 @@ header {
   position: sticky;
   top: 0;
   z-index: 100; 
+  box-shadow: var(--sombra);
+  padding: 1.25rem 2rem;
 }
 
 header a {
   text-decoration: none;
   color: var(--fondo);
 }
+
+/* MAIN */
 
 article a {
   color: var(--color-secundario);
@@ -57,4 +61,17 @@ article a {
 
 article a:hover {
   color: var(--color-secundario-hover);
+}
+
+/* FOOTER */
+
+footer {
+  background: var(--color-primario);
+  color: var(--fondo);  
+}
+
+footer nav a {
+  text-decoration: none;
+  background: var(--color-primario);
+  color: var(--fondo);
 }
