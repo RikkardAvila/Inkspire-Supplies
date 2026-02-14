@@ -64,6 +64,7 @@ header nav a {
   color: var(--fondo);
   text-decoration: none;
   font-weight: 500;
+  font-size: 1.25rem;
   padding: 0.35rem 0.75rem;
   border-radius: 8px;
   transition: background-color var(--transicion), color var(--transicion);
@@ -81,7 +82,7 @@ body > p {
   margin-left: auto;
   margin-right: auto;
   padding: 2rem;
-  text-align: center;
+  text-align: center; 
 }
 
 body > p {
