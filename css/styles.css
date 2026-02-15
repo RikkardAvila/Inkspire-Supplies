@@ -245,7 +245,7 @@ article a:hover {
   border-color: var(--color-secundario);
 }
 
-#ofertas button {
+.add-cart, #ofertas button {
   margin-top: 0.75rem;
   padding: 0.6rem 1.25rem;
   background: var(--color-secundario);
@@ -258,7 +258,7 @@ article a:hover {
   transition: background-color var(--transicion), transform var(--transicion);
 }
 
-#ofertas button:hover {
+.add-cart:hover, #ofertas button:hover {
   background: var(--color-secundario-hover);
   transform: scale(1.02);
 }
@@ -627,7 +627,6 @@ section ul li {
   #ofertas {
     grid-template-columns: 1fr;
   }
-
   #panel-carrito {
     width: 100vw;
     right: -1.25rem;
