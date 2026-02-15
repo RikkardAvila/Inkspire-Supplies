@@ -86,9 +86,10 @@ body > p {
 }
 
 body > p {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: var(--gris);
   margin-bottom: 0;
+
 }
 
 /* ===== Secciones ===== */
@@ -130,7 +131,7 @@ main section:first-child p {
 #bobina > div,
 #accesorios-maquinas > div {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
 }
 
@@ -139,7 +140,7 @@ article {
   background: var(--fondo-hover);
   border: 1px solid var(--gris-claro);
   border-radius: var(--radio);
-  padding: 1.5rem;
+  padding: 2rem;
   box-shadow: var(--sombra);
   transition: box-shadow var(--transicion), border-color var(--transicion), transform var(--transicion);
 }
@@ -221,9 +222,19 @@ article a:hover {
 
 /* ===== Ofertas (packs) ===== */
 #ofertas {
+  display: block;
+  text-align: center;
+}
+
+#ofertas > h2 {
+  display: inline-block;
+}
+
+#ofertas > div {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 #ofertas article {
@@ -442,6 +453,163 @@ section ul li {
   margin-bottom: 0.5rem;
 }
 
+/* ===== Carrito de compras ===== */
+#carrito-widget {
+  position: relative;
+  display: inline-block;
+}
+
+#btn-carrito {
+  background: var(--color-secundario);
+  color: var(--fondo-hover);
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color var(--transicion);
+}
+
+#btn-carrito:hover {
+  background: var(--color-secundario-hover);
+}
+
+#contador-carrito {
+  background: #ff6b6b;
+  color: white;
+  border-radius: 50%;
+  padding: 0.2rem 0.5rem;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+#panel-carrito {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: var(--fondo-hover);
+  border: 2px solid var(--gris-claro);
+  border-radius: var(--radio);
+  padding: 1.5rem;
+  width: 350px;
+  max-height: 500px;
+  overflow-y: auto;
+  box-shadow: var(--sombra-hover);
+  margin-top: 0.5rem;
+  z-index: 1000;
+}
+
+#panel-carrito h3 {
+  margin: 0 0 1rem 0;
+  color: var(--color-primario);
+}
+
+#panel-carrito.hidden {
+  display: none;
+}
+
+.item-carrito {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--gris-claro);
+  gap: 0.75rem;
+}
+
+.item-carrito span:first-child {
+  flex: 1;
+  color: var(--color-primario);
+  font-weight: 500;
+}
+
+.item-carrito span:nth-child(2) {
+  color: var(--color-secundario);
+  font-weight: 600;
+}
+
+.btn-eliminar {
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color var(--transicion);
+}
+
+.btn-eliminar:hover {
+  background: #ff5252;
+}
+
+#total-carrito {
+  padding: 1rem 0;
+  border-top: 2px solid var(--gris-claro);
+  color: var(--color-primario);
+}
+
+#total-carrito p {
+  margin: 0.5rem 0 0 0;
+}
+
+#vaciar-carrito,
+#pagar {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--transicion);
+}
+
+#vaciar-carrito {
+  background: var(--gris-claro);
+  color: var(--color-primario);
+}
+
+#vaciar-carrito:hover {
+  background: var(--gris);
+  color: white;
+}
+
+#pagar {
+  background: var(--color-secundario);
+  color: var(--fondo-hover);
+}
+
+#pagar:hover {
+  background: var(--color-secundario-hover);
+}
+
+.notificacion {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: var(--color-secundario);
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: var(--sombra-hover);
+  z-index: 2000;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 640px) {
   header,
@@ -458,5 +626,10 @@ section ul li {
   #categorias > div,
   #ofertas {
     grid-template-columns: 1fr;
+  }
+
+  #panel-carrito {
+    width: 100vw;
+    right: -1.25rem;
   }
 }
