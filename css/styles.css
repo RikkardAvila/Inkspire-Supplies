@@ -47,7 +47,7 @@ header {
 
 header h1 {
   margin: 0 0 1rem 0;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: 0.05em;
 }
@@ -64,7 +64,7 @@ header nav a {
   color: var(--fondo);
   text-decoration: none;
   font-weight: 500;
-  font-size: 1.25rem;
+  font-size: 1rem;
   padding: 0.35rem 0.75rem;
   border-radius: 8px;
   transition: background-color var(--transicion), color var(--transicion);
